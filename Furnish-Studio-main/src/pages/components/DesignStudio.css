@@ -1,0 +1,280 @@
+.design-studio {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #f1f5f9 0%, #e7eef8 100%);
+  padding: 32px;
+}
+
+.design-studio-header {
+  max-width: 1160px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.design-studio-header h1 {
+  font-size: clamp(2.4rem, 3vw, 3.4rem);
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.design-studio-header p {
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+.design-studio-layout {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+}
+
+.design-panel {
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.08);
+  padding: 24px;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.upload-card {
+  border: 2px dashed #cbd5e1;
+  border-radius: 20px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.upload-card:hover {
+  border-color: #7c3aed;
+  background: #f8f9ff;
+}
+
+.upload-card.drag-active {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.upload-card h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.upload-card p {
+  color: #6b7280;
+}
+
+.upload-icon {
+  width: 42px;
+  height: 42px;
+  color: #4338ca;
+  margin-bottom: 14px;
+}
+
+.upload-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(99, 102, 241, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.error-box {
+  border-radius: 16px;
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 16px;
+  font-weight: 600;
+}
+
+.options-panel {
+  display: grid;
+  gap: 22px;
+}
+
+.option-group h3 {
+  font-size: 1.05rem;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.swatches,
+.textures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.swatch,
+.texture-card {
+  border: 2px solid transparent;
+  border-radius: 18px;
+  min-height: 86px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 12px;
+  color: #111827;
+  font-weight: 700;
+  transition: transform 0.22s ease, border-color 0.22s ease;
+  position: relative;
+}
+
+.swatch.active,
+.texture-card.active {
+  border-color: #7c3aed;
+  transform: translateY(-2px);
+}
+
+.swatch span,
+.texture-card span {
+  z-index: 1;
+}
+
+.swatch {
+  min-height: 80px;
+}
+
+.texture-card {
+  background-color: #f3f4f6;
+  overflow: hidden;
+}
+
+.texture-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+}
+
+.btn-action {
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: white;
+  font-size: 1rem;
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.btn-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-action:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(79, 70, 229, 0.2);
+}
+
+.preview-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 1.25rem;
+}
+
+.preview-header p {
+  margin: 8px 0 0;
+  color: #6b7280;
+}
+
+.preview-frame {
+  position: relative;
+  min-height: 520px;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  background: #f8fafc;
+  display: grid;
+  place-items: center;
+}
+
+.preview-empty {
+  color: #6b7280;
+  text-align: center;
+  padding: 24px;
+}
+
+.preview-output {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  border-radius: 20px;
+  object-fit: contain;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.preview-card {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  background: white;
+}
+
+.preview-card img {
+  width: 100%;
+  display: block;
+}
+
+.preview-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+@media (max-width: 980px) {
+  .design-studio-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .design-studio {
+    padding: 20px;
+  }
+
+  .design-panel {
+    padding: 20px;
+  }
+
+  .swatches,
+  .textures {
+    grid-template-columns: 1fr;
+  }
+}
